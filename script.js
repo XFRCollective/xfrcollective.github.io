@@ -1,30 +1,20 @@
-// FOR NAV
-fetch("nav.html")
-  .then(response => response.text())
-  .then(nav => {
-    document.getElementById("nav-placeholder").innerHTML = nav;
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("nav-placeholder").innerHTML = "<p>Nav loaded</p>";
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const placeholders = [
+    { id: "nav", file: "nav.html" },
+    { id: "mission", file: "mission.html" },
+    { id: "donate", file: "donate.html" },
+    { id: "footer", file: "footer.html" }
+  ];
+
+  placeholders.forEach(p => {
+    fetch(p.file)
+      .then(res => res.ok ? res.text() : Promise.reject(`Failed to load ${p.file}`))
+      .then(html => document.getElementById(p.id).innerHTML = html)
+      .catch(err => console.error(err));
   });
-
-// FOR MISSION
-fetch("mission.html")
-  .then(response => response.text())
-  .then(mission => {
-    document.getElementById("mission-placeholder").innerHTML = mission;
-  });
-
-// FOR MISSION
-fetch("donate.html")
-  .then(response => response.text())
-  .then(donate => {
-    document.getElementById("donate-placeholder").innerHTML = donate;
-  });
-
-  
-// FOR FOOTER
-fetch("footer.html")
-  .then(response => response.text())
-  .then(footer => {
-    document.getElementById("footer-placeholder").innerHTML = footer;
-  });
-
-
+});
