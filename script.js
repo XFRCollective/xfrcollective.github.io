@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("nav-placeholder").innerHTML = "<p>Nav loaded</p>";
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
   const placeholders = [
     { id: "nav", file: "nav.html" },
     { id: "mission", file: "mission.html" },
