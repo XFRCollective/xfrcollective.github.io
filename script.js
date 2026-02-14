@@ -1,18 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const placeholders = [
-    { id: "nav-placeholder", file: "nav.html" },
-    { id: "mission-placeholder", file: "mission.html" },
-    { id: "donate-placeholder", file: "donate.html" },
-    { id: "footer-placeholder", file: "footer.html" }
-  ];
-
-  placeholders.forEach(p => {
-    fetch(p.file)
-      .then(res => res.ok ? res.text() : Promise.reject(`Failed to load ${p.file}`))
-      .then(html => {
-        const el = document.getElementById(p.id);
-        if(el) el.innerHTML = html;
-      })
-      .catch(err => console.error(err));
+// FOR NAV
+fetch("nav.html")
+  .then(response => response.text())
+  .then(nav => {
+    document.getElementById("nav").innerHTML = nav;
   });
+
+// FOR MISSION
+fetch("mission.html")
+  .then(response => response.text())
+  .then(mission => {
+    document.getElementById("mission").innerHTML = mission;
+  });
+
+// FOR MISSION
+fetch("donate.html")
+  .then(response => response.text())
+  .then(donate => {
+    document.getElementById("donate").innerHTML = donate;
+  });
+
+  
+// FOR FOOTER
+fetch("footer.html")
+  .then(response => response.text())
+  .then(footer => {
+    document.getElementById("footer").innerHTML = footer;
+  });
+
+
 });
