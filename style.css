@@ -97,6 +97,20 @@ nav ul {
   font-size: x-large;
 }
 
+/* --- CODE OF CONDUCT -- */
+#code-of-conduct {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+#conduct-text {
+  padding: 0 20px;
+  font-size: medium;
+  text-align: left;
+}
+
 /* --- SWAG IMAGES --- */
 .swag-images a {
   display: flex;
